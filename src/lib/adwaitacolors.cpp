@@ -26,10 +26,12 @@
 
 #include <QtGlobal>
 #include <QGuiApplication>
+#include <QDir>
 #include <QFile>
 #include <QMetaEnum>
 #include <QRegularExpression>
 #include <QtMath>
+#include <QtDebug>
 
 Q_LOGGING_CATEGORY(ADWAITA, "adwaita.colors")
 
@@ -256,8 +258,28 @@ static QString checkRadioColorSuffixFromOptions(const StyleOptions &options)
 
 ColorsPrivate::ColorsPrivate()
 {
-    const QStringList variants = { QStringLiteral("light"), QStringLiteral("dark"),
-                                   QStringLiteral("hc"), QStringLiteral("hc-dark") };
+    //const QStringList variants = { QStringLiteral("light"), QStringLiteral("dark"),
+    //                               QStringLiteral("hc"), QStringLiteral("hc-dark") };
+	//
+    const QStringList variants = { QStringLiteral("light") };
+
+	QString filename;
+	const QString log_prefix = QStringLiteral(":: oomox-qtstyleplugin:");
+	const QString oomox_env_var_name = QStringLiteral("OOMOX_QTSTYLEPLUGIN_THEME");
+	const QString oomox_env_var_value = qgetenv(oomox_env_var_name.toStdString().c_str());
+	qDebug() << QString("%1 %2 = %3").arg(log_prefix, oomox_env_var_name, oomox_env_var_value);
+	const QString gtk_theme_env_var_name = QStringLiteral("GTK_THEME");
+	const QString gtk_theme_env_var_value = qgetenv(gtk_theme_env_var_name.toStdString().c_str());
+	qDebug() << QString("%1 %2 = %3").arg(log_prefix, gtk_theme_env_var_name, gtk_theme_env_var_value);
+	const QString theme_name = oomox_env_var_value.size() ? oomox_env_var_value : gtk_theme_env_var_value;
+	if (theme_name.size()) {
+		filename = QString("%1/.config/oomox-qtstyleplugin/themes/%2.css").arg(
+			QDir::homePath(),
+			theme_name
+		);
+		qDebug() << QString("%1 Loading %2...").arg(log_prefix, filename);
+	}
+
     for (const QString &variant : variants) {
         ColorVariant colorVariant;
         if (variant == QStringLiteral("light")) {
@@ -270,12 +292,27 @@ ColorsPrivate::ColorsPrivate()
             colorVariant = AdwaitaHighcontrastInverse;
         }
 
-        const QString filename = QStringLiteral(":/stylesheet/Adwaita-%1.css").arg(variant);
-        QFile file(filename);
-
-        if (!file.open(QIODevice::ReadOnly)) {
-            continue;
-        }
+		QFile file;
+		if (theme_name.size()) {
+			file.setFileName(filename);
+			if (!file.open(QIODevice::ReadOnly)) {
+				qWarning() << QString("%1 Can't open %2").arg(log_prefix, filename);
+				filename = QStringLiteral(":/stylesheet/Adwaita-%1.css").arg(variant);
+				qDebug() << QString("%1 Loading %2...").arg(log_prefix, filename);
+				file.setFileName(filename);
+				if (!file.open(QIODevice::ReadOnly)) {
+					qWarning() << QString("%1 Can't open %2").arg(log_prefix, filename);
+					continue;
+				}
+			}
+		} else {
+			filename = QStringLiteral(":/stylesheet/Adwaita-%1.css").arg(variant);
+			file.setFileName(filename);
+			if (!file.open(QIODevice::ReadOnly)) {
+				qWarning() << QString("%1 Can't open %2").arg(log_prefix, filename);
+				continue;
+			}
+		}
 
         QTextStream in(&file);
         while (!in.atEnd()) {
