@@ -368,7 +368,7 @@
      <item>
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>&lt;a href=&quot;https://github.com/FedoraQt/adwaita-qt&quot;&gt;link button&lt;/a&gt;</string>
+        <string>&lt;a href=&quot;https://github.com/FedoraQt/oodwaita-qt&quot;&gt;link button&lt;/a&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

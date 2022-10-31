@@ -1,0 +1,5 @@
+[Misc]
+Name=Oodwaita
+Comment=Qt widget style for GNOME
+[KDE]
+WidgetStyle=Oodwaita

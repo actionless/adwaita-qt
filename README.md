@@ -1,21 +1,10 @@
-adwaita-qt
-==========
+oomox-qtstyleplugin
+===================
 
-A native style to bend Qt5/Qt6 applications to look like they belong into GNOME Shell.
+A native style to bend Qt5/Qt6 applications to look with Themix colors.
 
-This style provides all four variants of GTK Adwaita theme:
+This style is based on Qt Adwaita theme.
 
-* Adwaita
-![Widget Factory](data/screenshots/widgets-adwaita.png)
-
-* Adwaita-dark
-![Widget Factory](data/screenshots/widgets-adwaita-dark.png)
-
-* HighContrast
-![Widget Factory](data/screenshots/widgets-highcontrast.png)
-
-* HighContrastInverse
-![Widget Factory](data/screenshots/widgets-highcontrastinverse.png)
 
 ## How to compile
 
@@ -33,4 +22,20 @@ make install
 
 ## Usage
 
-After install, you'll be able to either set the theme as your default via your DE's tools (like `systemsettings` or `qt-config`) or start your qt applications with the `-style adwaita` parameter.
+After install, you'll be able to either set the theme as your default via your DE's tools (like `systemsettings` or `qt-config`) or start your qt applications with the `-style oomox` parameter.
+
+
+### Overriding GTK theme
+
+By default theme would load from `GTK_THEME` env var, it could be overriden with:
+
+```
+OOMOX_QTSTYLEPLUGIN_THEME=Test qt-app-name
+```
+
+which will load the theme from `~/.config/oomox-qtstyleplugin/themes/Test.css`.
+
+
+## Creating custom theme
+
+In Themix-GUI choose Export -> Base16 Plugin -> qt-oomox-styleplugin.

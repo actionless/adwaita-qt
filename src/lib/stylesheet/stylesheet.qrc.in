@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/stylesheet">
-        <file alias="Adwaita-light.css">@STYLESHEET_PATH@/Adwaita-light.css</file>
+        <file alias="Oodwaita-light.css">@STYLESHEET_PATH@/Oodwaita-light.css</file>
     </qresource>
 </RCC>
