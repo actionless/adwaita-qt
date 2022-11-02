@@ -5,8 +5,13 @@ A native style to bend Qt5/Qt6 applications to look with Themix colors.
 
 This style is based on Qt Adwaita theme.
 
+## Installation
 
-## How to compile
+### Arch Linux
+
+Use PKGBUILD file or get it on AUR([qt5](https://aur.archlinux.org/packages/oomox-qt5-styleplugin-git), [qt6](https://aur.archlinux.org/packages/oomox-qt6-styleplugin-git)).
+
+### How to compile manually
 
 The project uses the standard CMake buildsystem.
 
