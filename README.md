@@ -43,7 +43,7 @@ which will load the theme from `~/.config/oomox-qtstyleplugin/themes/Test.css`.
 
 ## Creating custom theme
 
-In Themix-GUI choose Export -> Base16 Plugin -> qt-oomox-styleplugin.
+In [Themix-GUI](https://github.com/themix-project/themix-gui) choose Export -> Base16 Plugin -> qt-oomox-styleplugin.
 
 ### Creating theme manually
 
