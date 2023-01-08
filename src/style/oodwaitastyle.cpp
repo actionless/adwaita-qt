@@ -4599,13 +4599,13 @@ bool Style::drawPushButtonLabelControl(const QStyleOption *option, QPainter *pai
 
     // render text
     if (hasText && textRect.isValid()) {
-        if (enabled && !sunken && !mouseOver && !flat) {
-            if (_dark) {
-                drawItemText(painter, textRect.adjusted(0, -1, 0, -1), textFlags, palette, false, buttonOption->text, QPalette::Dark);
-            } else {
-                drawItemText(painter, textRect.adjusted(0, 1, 0, 1), textFlags, palette, false, buttonOption->text, QPalette::Light);
-            }
-        }
+        //if (enabled && !sunken && !mouseOver && !flat) {
+        //    if (_dark) {
+        //        drawItemText(painter, textRect.adjusted(0, -1, 0, -1), textFlags, palette, false, buttonOption->text, QPalette::Dark);
+        //    } else {
+        //        drawItemText(painter, textRect.adjusted(0, 1, 0, 1), textFlags, palette, false, buttonOption->text, QPalette::Light);
+        //    }
+        //}
         drawItemText(painter, textRect, textFlags, palette, enabled, buttonOption->text, textRole);
     }
 
