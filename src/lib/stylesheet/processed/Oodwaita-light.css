@@ -62,12 +62,12 @@
 /*button { color: #0e0021; outline-color: rgba(53, 132, 228, 0.5); border-color: #cdc7c2; background-image: linear-gradient(to top, #85509c 2px, #85509c); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07); }*/
 /*button:hover { color: #0e0021; border-color: #cdc7c2; background-image: linear-gradient(to top, rgba(#, #, #, 0.89), rgba(#, #, #, 0.89) 1px); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32); }*/
 
-button { color: #0e0021; outline-color: #782870; border-color: rgba(14, 0, 33, 0.32); background-image: image(#85509c); box-shadow: none; text-shadow: none; }
-button:hover { color: #0e0021; border-color: rgba(14, 0, 33, 0.32); background-image: image(rgba(133, 80, 156, 0.89)); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32); }
+button { color: #0e0021; outline-color: #782870; border-color: rgba(14, 0, 33, 0.38); background-image: image(#85509c); box-shadow: none; text-shadow: none; }
+button:hover { color: #0e0021; border-color: rgba(14, 0, 33, 0.46); background-image: image(rgba(133, 80, 156, 0.77)); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32); }
 
-button:checked { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.32); background-image: image(#782870); box-shadow: none; }
-button:checked:hover { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.32); background-image: image(rgba(120, 40, 112, 0.89)); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32); }
-button:checked:active { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.32); background-image: image(#782870); box-shadow: none; }
+button:checked { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.38); background-image: image(#782870); box-shadow: none; }
+button:checked:hover { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.46); background-image: image(rgba(120, 40, 112, 0.77)); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32); }
+button:checked:active { color: #c0bbbb; border-color: rgba(14, 0, 33, 0.38); background-image: image(#782870); box-shadow: none; }
 
 button:backdrop { color: #0e0021; border-color: rgba(14, 0, 33, 0.32); background-image: image(rgba(133, 80, 156, 0.89)); box-shadow: none; }
 button:backdrop:active { color: #0e0021; border-color: rgba(14, 0, 33, 0.32); background-image: image(rgba(133, 80, 156, 0.89)); box-shadow: none; }
