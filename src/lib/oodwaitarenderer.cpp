@@ -429,14 +429,17 @@ void Renderer::renderButtonFrame(const StyleOptions &options)
     }
 
     // render
+	if (!options.sunken() && options.active() && options.color().isValid()) {
+		options.painter()->setPen(options.outlineColor());
+	}
     options.painter()->drawRoundedRect(frameRect, radius, radius);
 
-    if (!options.sunken() && options.active() && options.color().isValid()) {
-        options.painter()->setPen(options.color().lighter(140));
-        options.painter()->drawLine(frameRect.topLeft() + QPoint(3, 1), frameRect.topRight() + QPoint(-3, 1));
-        options.painter()->setPen(options.outlineColor().darker(114));
-        options.painter()->drawLine(frameRect.bottomLeft() + QPointF(2.7, 0), frameRect.bottomRight() + QPointF(-2.7, 0));
-    }
+    //if (!options.sunken() && options.active() && options.color().isValid()) {
+    //    options.painter()->setPen(options.color().lighter(140));
+    //    options.painter()->drawLine(frameRect.topLeft() + QPoint(3, 1), frameRect.topRight() + QPoint(-3, 1));
+    //    options.painter()->setPen(options.outlineColor().darker(114));
+    //    options.painter()->drawLine(frameRect.bottomLeft() + QPointF(2.7, 0), frameRect.bottomRight() + QPointF(-2.7, 0));
+    //}
 
     options.painter()->restore();
 }
