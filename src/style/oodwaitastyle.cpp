@@ -5857,7 +5857,7 @@ bool Style::drawTabBarTabLabelControl(const QStyleOption *option, QPainter *pain
         }
 
         QFont font = painter->font();
-        font.setBold(true);
+        //font.setBold(true);
         painter->setFont(font);
         if (!(tab->state & State_Enabled)) {
             if (tab->state & State_Selected) {
