@@ -4,7 +4,7 @@
 
 pkgbase=oomox-qt-styleplugin-git
 pkgname=(oomox-qt5-styleplugin-git oomox-qt6-styleplugin-git)
-pkgver=1.4.1.r36.ge15cd47
+pkgver=1.4.1.r37.gc1a109b
 pkgrel=1
 pkgdesc='A style to bend Qt applications to look like they belong into themix/oomox, git package.'
 arch=(x86_64)
