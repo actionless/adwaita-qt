@@ -4,7 +4,7 @@
 
 pkgbase=oomox-qt-styleplugin-git
 pkgname=(oomox-qt5-styleplugin-git oomox-qt6-styleplugin-git)
-pkgver=1.4.1.r25.g58805cb
+pkgver=1.4.1.r36.ge15cd47
 pkgrel=1
 pkgdesc='A style to bend Qt applications to look like they belong into themix/oomox, git package.'
 arch=(x86_64)
@@ -39,6 +39,7 @@ package_oomox-qt5-styleplugin-git() {
   provides=(oomox-qt5 oomox-qt-git)
 
   DESTDIR="$pkgdir" cmake --install build-qt5
+  install -Dm644 "${srcdir}/${pkgbase%-git}/packaging/90-qt5-oomox-styleplugins.hook" "${pkgdir}/usr/share/libalpm/hooks/90-qt5-oomox-styleplugins.hook"
 }
 
 package_oomox-qt6-styleplugin-git() {
@@ -48,4 +49,5 @@ package_oomox-qt6-styleplugin-git() {
   provides=(oomox-qt6)
 
   DESTDIR="$pkgdir" cmake --install build-qt6
+  install -Dm644 "${srcdir}/${pkgbase%-git}/packaging/90-qt6-oomox-styleplugins.hook" "${pkgdir}/usr/share/libalpm/hooks/90-qt6-oomox-styleplugins.hook"
 }
