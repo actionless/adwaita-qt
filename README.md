@@ -53,3 +53,8 @@ Use [default theme](https://github.com/themix-project/oomox-qt-styleplugin/blob/
 ## Plans
 
 - load theme parameters on the fly, not only via env var
+
+
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/themix-project/oomox-qt-styleplugin/master/screenshots/2024-05-28--1716923307_3840x2160_scrot.png)
