@@ -485,6 +485,7 @@ QPalette Colors::palette(ColorVariant variant)
     QPalette palette;
 
     QColor buttonColor = colorsGlobal->oodwaitaWidgetColor(QStringLiteral("button_background_image"), variant);
+    QColor buttonTextColor = colorsGlobal->oodwaitaWidgetColor(QStringLiteral("button_color"), variant);
     QColor disabledButtonColor = colorsGlobal->oodwaitaWidgetColor(QStringLiteral("button_backdrop_background_image"), variant);
 
     palette.setColor(QPalette::All,      QPalette::Window,          colorsGlobal->oodwaitaColor(ColorsPrivate::bg_color, variant));
@@ -496,7 +497,7 @@ QPalette Colors::palette(ColorVariant variant)
     palette.setColor(QPalette::All,      QPalette::PlaceholderText, colorsGlobal->oodwaitaColor(ColorsPrivate::fg_color, variant));
     palette.setColor(QPalette::All,      QPalette::Text,            colorsGlobal->oodwaitaColor(ColorsPrivate::fg_color, variant));
     palette.setColor(QPalette::All,      QPalette::Button,          buttonColor);
-    palette.setColor(QPalette::All,      QPalette::ButtonText,      colorsGlobal->oodwaitaColor(ColorsPrivate::fg_color, variant));
+    palette.setColor(QPalette::All,      QPalette::ButtonText,      buttonTextColor);
     palette.setColor(QPalette::All,      QPalette::BrightText,      colorsGlobal->oodwaitaColor(ColorsPrivate::text_color, variant));
 
     palette.setColor(QPalette::All,      QPalette::Light,           Colors::lighten(buttonColor));
@@ -518,7 +519,7 @@ QPalette Colors::palette(ColorVariant variant)
     palette.setColor(QPalette::Disabled, QPalette::PlaceholderText, colorsGlobal->oodwaitaColor(ColorsPrivate::insensitive_fg_color, variant));
     palette.setColor(QPalette::Disabled, QPalette::Text,            colorsGlobal->oodwaitaColor(ColorsPrivate::insensitive_fg_color, variant));
     palette.setColor(QPalette::Disabled, QPalette::Button,          colorsGlobal->oodwaitaColor(ColorsPrivate::insensitive_bg_color, variant));
-    palette.setColor(QPalette::Disabled, QPalette::ButtonText,      colorsGlobal->oodwaitaColor(ColorsPrivate::insensitive_fg_color, variant));
+    palette.setColor(QPalette::Disabled, QPalette::ButtonText,      buttonTextColor);
     palette.setColor(QPalette::Disabled, QPalette::BrightText,      colorsGlobal->oodwaitaColor(ColorsPrivate::text_color, variant));
 
     palette.setColor(QPalette::Disabled, QPalette::Light,           Colors::lighten(buttonColor));
@@ -542,7 +543,7 @@ QPalette Colors::palette(ColorVariant variant)
     palette.setColor(QPalette::Inactive, QPalette::PlaceholderText, colorsGlobal->oodwaitaColor(ColorsPrivate::backdrop_fg_color, variant));
     palette.setColor(QPalette::Inactive, QPalette::Text,            colorsGlobal->oodwaitaColor(ColorsPrivate::backdrop_fg_color, variant));
     palette.setColor(QPalette::Inactive, QPalette::Button,          disabledButtonColor);
-    palette.setColor(QPalette::Inactive, QPalette::ButtonText,      colorsGlobal->oodwaitaColor(ColorsPrivate::backdrop_fg_color, variant));
+    palette.setColor(QPalette::Inactive, QPalette::ButtonText,      buttonTextColor);
     palette.setColor(QPalette::Inactive, QPalette::BrightText,      colorsGlobal->oodwaitaColor(ColorsPrivate::backdrop_text_color, variant));
 
     palette.setColor(QPalette::Inactive, QPalette::Light,           Colors::lighten(buttonColor));
