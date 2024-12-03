@@ -53,6 +53,7 @@ Use [default theme](https://github.com/themix-project/oomox-qt-styleplugin/blob/
 ## Plans
 
 - load theme parameters on the fly, not only via env var
+- make border radius adjustable, at least for the buttons
 
 
 ## Screenshot
